@@ -1,0 +1,176 @@
+.notifications {
+    pointer-events: none !important;
+    opacity: 0;
+    color: black;
+    z-index: 10;
+
+    &:hover {
+        pointer-events: all;
+        opacity: 1;
+
+        & div {
+            pointer-events: all !important;
+            animation: var(--show-top);
+        }
+    }
+
+    &[open] {
+        pointer-events: all;
+        opacity: 1;
+
+        & div {
+            pointer-events: all !important;
+            animation: var(--show-top);
+        }
+    }
+
+    &[type='1'] {
+        & div span p {
+            border-color: rgb(0, 51, 255);
+        }
+    }
+
+    &[type='2'] {
+        & div span p {
+            border-color: red;
+        }
+    }
+
+    & div {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+
+        position: relative;
+        top: 55px;
+        left: 55px;
+
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.308);
+
+        & span {
+            width: 100%;
+            margin-right: 10px;
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+
+            & p {
+                border-bottom: solid 2px;
+                padding-bottom: 5px;
+            }
+        }
+
+        & svg {
+            font-size: 1.3rem;
+            padding: 10px 12px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.196);
+            transition: .3s;
+
+            &:hover {
+                background-color: rgb(221, 50, 50);
+                box-shadow: 0 0 3px red;
+                color: white;
+            }
+        }
+
+        & nav {
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+            width: 100%;
+            gap: 10px;
+            margin-top: 10px;
+
+            & button {
+                padding: 10px;
+                width: 100%;
+                font-weight: 550;
+                border-radius: 5px;
+                background-color: rgba(255, 0, 0, 0.671);
+                color: white;
+
+                &:first-child {
+                    background-color: var(--confirm-btn);
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .notifications {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        pointer-events: none !important;
+        opacity: 0;
+        color: black;
+
+        &[open] {
+            pointer-events: all;
+            opacity: 1;
+
+            & div {
+                pointer-events: all !important;
+            }
+        }
+
+        & div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+
+            position: relative;
+            top: 55px;
+            left: 0;
+
+            width: calc(100% - 10px);
+            max-width: 500px;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.308);
+
+            & span {
+                width: 100%;
+                margin-right: 10px;
+
+                & h3 {
+                    font-size: .9rem;
+                }
+                & p {
+                    font-size: .8rem;
+                    
+                }
+            }
+
+            & svg {
+                font-size: 1.3rem;
+                padding: 7px 9px;
+                border-radius: 50%;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.196);
+                transition: .3s;
+
+                &:hover {
+                    background-color: rgb(221, 50, 50);
+                    box-shadow: 0 0 3px red;
+                    color: white;
+                }
+            }
+
+            &  nav {
+                & button {
+                    padding: 10px;
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+}

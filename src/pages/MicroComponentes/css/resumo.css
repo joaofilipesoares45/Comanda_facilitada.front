@@ -1,0 +1,257 @@
+.modal.resumo-comanda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &[open] {
+        backdrop-filter: blur(2px);
+    }
+
+    & .resumo-content {
+        width: calc(100% - 40px);
+        max-width: 750px;
+        min-height: 400px;
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.36);
+        position: relative;
+
+        & h2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            font-size: 1.1rem;
+            font-weight: 550;
+            color: rgb(77, 142, 193);
+            width: 100%;
+            height: 100vh;
+            max-height: 50px;
+            border-bottom: solid 2px rgb(77, 142, 193);
+
+            & svg {
+                font-size: 1.3rem;
+                padding: 10px 20px;
+            }
+        }
+
+        & .data {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            padding-top: 5px;
+        
+            & h3 {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 10px;
+
+                & span {
+                    font-size: 1.1rem;
+                    color: rgba(0, 0, 0, 0.528);
+                    text-align: end;
+
+                    & p {
+                        font-size: 1.3rem;
+                        color: var(--confirm-btn);
+                    }
+
+                }
+            }
+
+            & .food-list {
+                overflow: auto;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+
+                & div {
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    width: 100%;
+                    padding: 10px 5px;
+                    border-bottom: solid 2px rgba(77, 143, 193, 0.691);
+
+                    & h4 {
+                        display: flex;
+                        align-items: center;
+                        font-weight: 440;
+
+                        & svg {
+                            font-size: 1.1rem;
+                            margin-inline: 10px;
+                            border-radius: 50%;
+                            color: red;
+                            padding: 4px 5px;
+                            box-shadow: 0 0 3px rgba(0, 0, 0, 0.309);
+                        }
+                    }
+
+                    & p {
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+
+                & .info {
+                    width: calc(100% - 10px);
+                    justify-self: center;
+                    height: 100px;
+                    justify-content: center;
+                    border-color: transparent;
+
+                    & h4 {
+                        border-bottom: solid 2px red;
+                        padding: 5px;
+                        font-size: .8rem;
+                    }
+
+                    & svg {
+                        margin-left: 0px;
+                        font-size: 1rem;
+                        padding: 5px 11.5px;
+                        background-color: rgba(255, 0, 0, 0.743);
+                        color: white;
+                    }
+                }
+
+                & span.total {
+                    margin-block: 20px;
+                    align-self: flex-end;
+                    color: rgba(22, 97, 155, 0.691);
+                    font-weight: 500;
+                }
+            }
+        }
+
+        & nav {
+            width: calc(100%);
+            gap: 10px;
+            padding: 10px;
+
+            display: flex;
+            flex-wrap: nowrap;
+
+            & button {
+                background-color: rgb(254, 36, 36);
+                color: white;
+                font-size: 1.1rem;
+                padding: 10px;
+                border-radius: 5px;
+
+                &.finish {
+                    background-color: var(--confirm-btn);
+                    width: 100%;
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width:500px) {
+    .modal.resumo-comanda {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &[open] {
+            backdrop-filter: none;
+
+            & .resumo-content {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
+        & .resumo-content {
+            width: 100%;
+            max-width: auto !important;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 0px;
+            opacity: 0;
+            transition: .3s;
+
+            & h2 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: white;
+                font-size: 1.1rem;
+                font-weight: 550;
+                color: rgb(77, 142, 193);
+                height: 100vh;
+                max-height: 50px;
+
+                & svg {
+                    font-size: 1.3rem;
+                }
+
+                & p {
+                    padding: 10px;
+                    width: 100px !important;
+                }
+            }
+
+            & .data {
+                padding: 10px;
+
+                & h3 {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    & span {
+                        color: var(--confirm-btn);
+                    }
+                }
+
+                & .food-list {
+                    max-height: 400px;
+                    overflow-y: auto;
+
+                    & div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 10px;
+
+                        & h4 {
+                            font-weight: 440;
+                            font-size: .8rem;
+
+                            & svg {
+                                font-size: .9rem;
+                                margin-left: 0px;
+                            }
+                        }
+
+                        & p {
+                            font-size: .8rem;
+                        }
+                    }
+                }
+            }
+
+            & nav {
+                & button {
+                    color: white;
+                    font-size: 1rem;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}

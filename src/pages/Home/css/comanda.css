@@ -1,0 +1,192 @@
+.home-component.comanda {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 20px;
+
+    & form {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+        background-color: rgb(237, 242, 255);
+
+
+        position: sticky;
+        top: -50px;
+
+        & div {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-bottom: 20px;
+
+            & label {
+                color: gray;
+                font-weight: 550;
+            }
+
+            & input {
+                padding: 10px 5px;
+                background-color: transparent;
+                border-bottom: solid 2px gray;
+                color: black;
+                font-size: 1rem;
+                width: 100%;
+
+                &:focus {
+                    border-color: blue;
+                }
+            }
+        }
+
+        & button {
+            background-color: var(--confirm-btn);
+            color: white;
+            font-size: 1rem;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    }
+
+    & .list-comandas {
+        display: flex;
+        align-self: center;
+        flex-wrap: wrap;
+        width: calc(100% - 60px);
+        max-width: 600px;
+        gap: 10px;
+        margin-top: 30px;
+        text-wrap: nowrap;
+
+        & .comanda-div {
+            min-width: 120px;
+            color: rgba(14, 62, 112, 0.584);
+            background-color: rgba(178, 193, 209, 0.597);
+            border-radius: 5px;
+            cursor: pointer;
+
+            padding: 10px;
+
+            &[status='finish'] {
+                & h4 {
+                    border-color: rgba(255, 0, 0, 0.434);
+                }
+            }
+
+            & h4 {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 15px;
+                border-bottom: solid 2px rgba(0, 0, 255, 0.416);
+
+                & p {
+                    margin-left: 30px;
+                    font-weight: 550;
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .home-component.comanda {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding-top: 0px;
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            width: 100%;
+            max-width: 500px;
+            padding: 10px 20px;
+            top: 0;
+            box-shadow: 0px 2px 5px -2px rgba(0, 0, 0, 0.4);
+
+            & div {
+                display: flex;
+                flex-direction: column-reverse;
+                margin-bottom: 20px;
+
+                & label {
+                    color: gray;
+                    font-weight: 550;
+                    font-size: .9rem;
+                }
+
+                & input {
+                    padding: 10px 5px;
+                    background-color: transparent;
+                    border-bottom: solid 2px gray;
+                    color: black;
+                    font-size: 1rem;
+                    width: 100%;
+
+                    &:focus {
+                        border-color: blue;
+                    }
+                }
+            }
+
+            & button {
+                background-color: var(--confirm-btn);
+                color: white;
+                font-size: .9rem;
+                border-radius: 5px;
+                padding: 5px;
+                width: 50%;
+                min-width: 200px;
+                align-self: center;
+            }
+        }
+
+        & .list-comandas {
+            display: flex;
+            align-self: center;
+            flex-wrap: wrap;
+            width: calc(100% - 60px);
+            max-width: 600px;
+            gap: 10px;
+            padding-block: 30px 50px;
+            text-wrap: nowrap;
+
+            & .comanda-div {
+                width: 100%;
+                min-width: 120px;
+                color: rgba(14, 62, 112, 0.584);
+                background-color: rgba(178, 193, 209, 0.597);
+                border-radius: 5px;
+                cursor: pointer;
+
+                padding: 10px;
+
+                &[status='finish'] {
+                    & h4 {
+                        border-color: rgba(255, 0, 0, 0.434);
+                    }
+                }
+
+                & h4 {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    margin-bottom: 15px;
+                    border-bottom: solid 2px rgba(0, 0, 255, 0.416);
+
+                    & p {
+                        margin-left: 30px;
+                        font-weight: 550;
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+    }
+}

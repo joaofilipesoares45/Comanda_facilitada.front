@@ -1,0 +1,321 @@
+.home-component.produtos {
+    display: flex;
+    flex-direction: column;
+
+    & .s-nav {
+        width: calc(100% - 50px);
+        max-width: 600px;
+        margin: 20px;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+
+        & .search {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            width: 100%;
+            padding: 3px;
+
+            border: solid 2px rgb(71, 71, 248);
+            background-color: white;
+
+            border-radius: 30px;
+            overflow: hidden;
+
+            & input {
+                padding: 10px 15px;
+                font-size: .9rem;
+                font-weight: 550;
+                width: 100%;
+                background-color: transparent;
+                color: rgb(66, 66, 255);
+
+                &:focus::placeholder {
+                    color: rgb(71, 71, 248);
+                }
+            }
+
+            & svg {
+                padding: 7px 22px;
+                font-size: 1.5rem;
+                border-radius: 30px;
+                color: white;
+                background-color: rgb(71, 71, 248);
+                border: solid 2px rgb(71, 71, 248);
+                transition: .2s;
+
+                &:hover {
+                    background-color: white;
+
+
+                    color: rgb(71, 71, 248);
+                }
+            }
+        }
+
+        & .fa-filter {
+            background-color: rgb(71, 71, 248);
+            border: solid 2px rgb(71, 71, 248);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: .2s;
+
+            &:hover {
+                background-color: white;
+                color: rgb(71, 71, 248);
+            }
+        }
+
+        & span {
+            display: flex;
+            text-wrap: nowrap;
+            align-items: center;
+            margin-left: 10px;
+            font-size: .7rem;
+            background-color: rgb(71, 71, 248);
+            color: white;
+            border: solid 2px rgb(71, 71, 248);
+            border-radius: 10px;
+            padding-left: 10px;
+            cursor: pointer;
+            transition: .2s;
+
+            &::before {
+                content: 'Novo Produto';
+            }
+
+            & .fa-plus {
+                padding: 10px 11px;
+                font-size: 1rem;
+            }
+
+            &:hover {
+                background-color: white;
+                color: rgb(71, 71, 248);
+            }
+        }
+    }
+
+    & .list-produtos {
+        width: calc(100% - 20px);
+        max-width: 700px;
+        align-self: center;
+        border-top: solid 2px rgb(255, 255, 255);
+        padding-block: 20px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            background-color: rgba(255, 255, 255, 0);
+            position: absolute;
+            width: 5px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgb(198, 205, 255);
+            border-radius: 10px;
+        }
+
+
+        & .produto-div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-bottom: solid 2px rgba(174, 193, 255, 0.785);
+            color: gray;
+            cursor: pointer;
+            transition: .2s;
+
+            &[hidden] {
+                display: none !important;
+            }
+
+            &:hover {
+                background-color: rgba(8, 87, 205, 0.131);
+            }
+
+            & h4 {
+                display: flex;
+                flex-direction: column;
+                font-size: .8rem;
+
+                & span {
+                    font-size: .9rem;
+                    color: rgba(0, 0, 0, 0.643);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .home-component.produtos {
+        display: flex;
+        flex-direction: column;
+
+        & .s-nav {
+            width: calc(100% - 50px);
+            max-width: 600px;
+            margin: 20px;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            align-items: center;
+
+            & .search {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                width: 100%;
+                padding: 3px;
+
+                border: solid 2px rgb(71, 71, 248);
+                background-color: white;
+
+                border-radius: 30px;
+                overflow: hidden;
+
+                & input {
+                    padding: 10px 15px;
+                    font-size: .9rem;
+                    font-weight: 550;
+                    width: 100%;
+                    background-color: transparent;
+                    color: rgb(66, 66, 255);
+
+                    &:focus::placeholder {
+                        color: rgb(71, 71, 248);
+                    }
+                }
+
+                & svg {
+                    padding: 7px 22px;
+                    font-size: 1.5rem;
+                    border-radius: 30px;
+                    color: white;
+                    background-color: rgb(71, 71, 248);
+                    border: solid 2px rgb(71, 71, 248);
+                    transition: .2s;
+
+                    &:hover {
+                        background-color: white;
+
+
+                        color: rgb(71, 71, 248);
+                    }
+                }
+            }
+
+            & .fa-filter {
+                background-color: rgb(71, 71, 248);
+                border: solid 2px rgb(71, 71, 248);
+                color: white;
+                padding: 10px;
+                border-radius: 50%;
+                margin-left: 10px;
+                transition: .2s;
+
+                &:hover {
+                    background-color: white;
+                    color: rgb(71, 71, 248);
+                }
+            }
+
+            & span {
+                display: flex;
+                text-wrap: nowrap;
+                align-items: center;
+                margin-left: 10px;
+                font-size: .7rem;
+                background-color: rgba(255, 255, 255, 0);
+                color: white;
+                border: none;
+                padding-left: 0;
+                cursor: pointer;
+                transition: .2s;
+
+                &::before {
+                    content: '';
+                }
+
+                & .fa-plus {
+                    padding: 10px 11px;
+                    font-size: 1rem;
+
+                    background-color: rgb(71, 71, 248);
+                    border: solid 2px rgb(71, 71, 248);
+                    border-radius: 50%;
+
+                    &:hover {
+                        background-color: white;
+                        color: rgb(71, 71, 248);
+                    }
+                }
+
+
+            }
+        }
+
+        & .list-produtos {
+            width: calc(100% - 20px);
+            max-width: 700px;
+            align-self: center;
+            border-top: solid 2px rgb(255, 255, 255);
+            padding-block: 20px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                background-color: rgba(255, 255, 255, 0);
+                position: absolute;
+                width: 5px;
+                height: 5px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgb(198, 205, 255);
+                border-radius: 10px;
+            }
+
+
+            & .produto-div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                margin-bottom: 5px;
+                border-bottom: solid 2px rgba(174, 193, 255, 0.785);
+                color: gray;
+                cursor: pointer;
+                transition: .2s;
+
+                &[hidden] {
+                    display: none !important;
+                }
+
+                &:hover {
+                    background-color: rgba(8, 87, 205, 0.131);
+                }
+
+                & h4 {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: .8rem;
+
+                    & span {
+                        font-size: .9rem;
+                        color: rgba(0, 0, 0, 0.643);
+                    }
+                }
+            }
+        }
+    }
+
+}
